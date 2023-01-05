@@ -90,10 +90,20 @@ if (!$result) {
                                         id="mood"><?php echo $mood; ?></textarea>
                                 </div>
                                 <br>
-
+        <!--Navigation Buttons-->
+                                <div class="columns">
+                                <div class="column">
                                 <div class="field">
                                     <input class="button is-success is-block" type="submit" value="Submit">
                                 </div>
+                                </div>
+                                <div class="column" align="right">
+                                    <a href=viewMoods.php class="button is-danger">
+                                        <strong>Cancel</strong>
+                                    </a>
+                                </div>
+                            </div>
+
 
                             </div>
                         </div>

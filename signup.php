@@ -83,7 +83,7 @@ session_start()
                                 <div class="column">
                                     <input class="button is-success is-block" type="submit" value="Submit">
                                 </div>
-                                <div class="column">
+                                <div class="column" align="right">
                                     <a href=login.php class="button is-danger">
                                         <strong>Back</strong>
                                     </a>
