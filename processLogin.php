@@ -54,9 +54,7 @@ $data = json_decode($result, true);
         header("Location: main.php");
 
     } else {
-        echo "<p> Login unsuccessful</p>";
-
-        echo '<a href="login.php" class="button is-success">Back to Log In</a>';
+        header("Location: login.php?error=invalidcredentials");
     }
     ?>
 

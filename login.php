@@ -14,6 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -30,6 +31,20 @@ session_start();
                         <h3 class="title has-text-black">Mood Tracker</h3>
                         <p class="subtitle has-text-black">Log in to record how you feel</p>
 
+<?php
+                        //display errors
+                        if (isset($_GET['error'])) {
+                            
+                                echo '<p class="e">Username or Password is incorrect</p>';
+                
+
+                        }
+                        else{
+    echo '<br>';
+                
+                        }
+
+                        ?>
                         <!--Login Entry Form-->
                         <div class="field">
                             <div class="control">
