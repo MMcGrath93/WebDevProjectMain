@@ -44,7 +44,7 @@ $id = $_SESSION['id'];
                 echo '<tr>
                     <th class="has-background-white">Mood</th>
                     <th class="has-background-white">Notes</th>
-                    <th class="has-background-white">Date Recorded</th>
+                    <th class="has-background-white">Date & Time Recorded</th>
                     <th class="has-background-white"></th>
                     </tr>';
 
