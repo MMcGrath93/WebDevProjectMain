@@ -26,14 +26,11 @@ $deleteSQL = "DELETE FROM moods WHERE `moods`.`id` = $recordID";
  if (!$result){
     echo "<p>unable to Delete mood</p>";
  }else{
-        echo "<p>Record Deleted</p>"; 
+    header("Location: viewMoods.php");
  }
 
 ?>
 
-<a class="navbar-item">
-      <button class="button is-success" onclick="window.location.href='viewMoods.php';">Back to Mood List</button>
-      </a>
     
 </body>
 </html>

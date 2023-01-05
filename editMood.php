@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -10,7 +9,7 @@ $readSQL = "SELECT * from `moods` WHERE id=$mood_id";
 
 $result = $conn->query($readSQL);
 
-if (!$result){
+if (!$result) {
     echo "<p>Success</p>";
     exit($conn->error);
 }
@@ -32,22 +31,23 @@ if (!$result){
 
 <body>
 
-<?php
-//import nav bar
-include"./navbar.html";
-?>
-
-<?php
-while($row = $result->fetch_assoc()){
-    $mood = $row["context"];
-    $moodchoice = $row["value"];
-
-
-}
+    <?php
+    //import nav bar
+    include "./navbar.html";
     ?>
 
-    <!-- Create Form Action - POST -->
-    <form action="moodsapi.php" method="put">
+    <?php
+    while ($row = $result->fetch_assoc()) {
+        $mood = $row["context"];
+        $moodchoice = $row["value"];
+
+
+    }
+    ?>
+
+    <!-- Create Form Action - PUT -->
+    <form action="moodsapi.php?id=<?php echo $mood_id; ?>" method="put">">
+    
 
         <!--Main Canvas-->
         <div class="hero is-medium">
@@ -61,12 +61,23 @@ while($row = $result->fetch_assoc()){
                             <div>
                                 <label for="moodchoice">How are you feeling today?</label>
                                 <select class="select" name="moodchoice" id="moodchoice">
-                                    <option>Happy</option>
-                                    <option>Sad</option>
-                                    <option>Nervous</option>
-                                    <option>Angry</option>
-                                    <option>Anxious</option>
-                                    <option>Depressed</option>
+                                    <option value="Happy" <?php if ($moodchoice == "Happy")
+                                        echo "selected"; ?>>Happy
+                                    </option>
+                                    <option value="Sad" <?php if ($moodchoice == "Sad")
+                                        echo "selected"; ?>>Sad</option>
+                                    <option value="Nervous" <?php if ($moodchoice == "Nervous")
+                                        echo "selected"; ?>>
+                                        Nervous</option>
+                                    <option value="Angry" <?php if ($moodchoice == "Angry")
+                                        echo "selected"; ?>>Angry
+                                    </option>
+                                    <option value="Anxious" <?php if ($moodchoice == "Anxious")
+                                        echo "selected"; ?>>
+                                        Anxious</option>
+                                    <option value="Depressed" <?php if ($moodchoice == "Depressed")
+                                        echo "selected"; ?>>
+                                        Depressed</option>
                                 </select>
                             </div>
                             <br>
@@ -75,7 +86,8 @@ while($row = $result->fetch_assoc()){
                             <div class="field">
                                 <div>
                                     <label for="mood">Any observations you want to note?</label>
-                                    <textarea class="textarea" type="text" value=<?php echo $mood;?> name="mood" id="mood"> </textarea>
+                                    <textarea class="textarea" type="text" name="mood"
+                                        id="mood"><?php echo $mood; ?></textarea>
                                 </div>
                                 <br>
 
