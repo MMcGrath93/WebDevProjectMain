@@ -27,6 +27,7 @@ if (!$result) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 
+
 </head>
 
 <body>
@@ -46,7 +47,7 @@ if (!$result) {
     ?>
 
     <!-- Create Form Action - POST -->
-    <form action="moodsapi.php" method="put">
+    <form action="processEdit.php?moodid=<?php echo $mood_id ?> " method="post">
     <input type="hidden" name="mood_id" value="<?php echo $mood_id; ?>">
 
         <!--Main Canvas-->

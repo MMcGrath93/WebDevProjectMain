@@ -4,8 +4,10 @@ session_start();
 $recordid = $_SESSION['id'];
 
 
-
 header("Content-Type: application/json");
+echo '<p>In the API</p>';
+echo $_SERVER['REQUEST_METHOD'];
+echo file_get_contents('php://input');
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
@@ -70,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
 }
 
 //API call to update part of a record from the users mood list. This uses prepared statements in this example
-if(($_SERVER['REQUEST_METHOD'] === 'PUT') && isset($_PUT['mood_id'])) {
+if($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
     include "dbconn.php";
 
