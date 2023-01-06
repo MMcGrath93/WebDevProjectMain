@@ -3,10 +3,12 @@
 session_start();
 $recordid = $_SESSION['id'];
 
-
 header("Content-Type: application/json");
+//API Debugging 
 echo '<p>In the API</p>';
+echo "<br>";
 echo $_SERVER['REQUEST_METHOD'];
+echo "<br>";
 echo file_get_contents('php://input');
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -29,10 +31,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
     $insertSQL = "INSERT INTO `moods` (`id`, `user_id`, `value`, `context`, `datetime`) VALUES (NULL,'$recordid','$moodchoice','$mood',current_timestamp())";
 
-
     $result = $conn->query($insertSQL);
-
-
 
     if (!$result) {
         exit($conn->error);
@@ -48,48 +47,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
 
     echo "<p>In patch</p>";
 
-    include "dbconn.php";
-
-    $mood = $conn->real_escape_string($_PATCH['mood']);
-    $id = $conn->real_escape_string($_PATCH['moodid']);
-
-    echo $mood;
-
-
-    $updateSQL = "UPDATE `moods` SET `context` ='$mood' WHERE `moods`.`id`=$id )";
-
-
-    $result = $conn->query($insertSQL);
-
-    if ($response != false) {
-        http_response_code(200);
-
-    } else {
-        http_response_code(404);
-        echo json_encode(["message" => "Unable to perform Update!"]);
-    }
 
 }
 
 //API call to update part of a record from the users mood list. This uses prepared statements in this example
-if($_SERVER['REQUEST_METHOD'] === 'PUT') {
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
+    echo "<p>In put request</p>";
     include "dbconn.php";
 
     // Parse the data sent in the request
     parse_str(file_get_contents('php://input'), $data);
+    $mood = $conn->real_escape_string($data["mood"]);
+    $moodchoice = $conn->real_escape_string($data["moodchoice"]);
+    $id = $data["moodid"];
 
-    $mood = $data['mood'];
-    $moodchoice = $data['moodchoice'];
-    $id = $data['mood_id'];
+    //Debugging
+    echo "<br>";
+    echo var_dump($data);
+    echo "<br>";
+    echo $mood;
+    echo "<br>";
+    echo $moodchoice;
+    echo "<br>";
+    echo $id;
+    echo "<br>";
 
-    // Update the mood and moodchoice fields
-    $stmt = $conn->prepare("UPDATE `moods` SET `context` = ?, `moodchoice` = ? WHERE `moods`.`id` = ?");
+    // Prepare the update statement
+    $stmt = $conn->prepare("UPDATE `moods` SET `context` = ?, `value` = ? WHERE `moods`.`id` = ?");
     $stmt->bind_param("ssi", $mood, $moodchoice, $id);
+
+    // Execute the update statement
     $result = $stmt->execute();
     if ($result) {
         http_response_code(200);
-        header("Location: viewMoods.php");
+        // header("Location: viewMoods.php");
     } else {
         http_response_code(404);
         echo json_encode(["message" => "Unable to perform Update!"]);
@@ -110,12 +102,13 @@ if (($_SERVER['REQUEST_METHOD'] === 'DELETE') && (isset($_GET['moodid']))) {
 
     $result = $conn->query($deleteSQL);
 
+
     if (!$result) {
         echo "<p>unable to Delete mood</p>";
     } else {
         header("Location: viewMoods.php");
         echo "<p>Mood Deleted</p>";
-        
+
     }
 
 
