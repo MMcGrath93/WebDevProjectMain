@@ -5,11 +5,13 @@ $recordid = $_SESSION['id'];
 
 header("Content-Type: application/json");
 //API Debugging 
+/*
 echo '<p>In the API</p>';
 echo "<br>";
 echo $_SERVER['REQUEST_METHOD'];
 echo "<br>";
 echo file_get_contents('php://input');
+*/
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 //API call to add a new mood record to the users list
 if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
-    echo "<p>In post</p>";
+    //echo "<p>In post</p>";
 
     include "dbconn.php";
 
@@ -45,7 +47,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
 
 
-    echo "<p>In patch</p>";
+    //echo "<p>In patch</p>";
 
 
 }
@@ -53,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
 //API call to update part of a record from the users mood list. This uses prepared statements in this example
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
-    echo "<p>In put request</p>";
+    //echo "<p>In put request</p>";
     include "dbconn.php";
 
     // Parse the data sent in the request
@@ -61,11 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $mood = $conn->real_escape_string($data["mood"]);
     $moodchoice = $conn->real_escape_string($data["moodchoice"]);
     $id = intval($data["mood_id"]);
-    echo "<br>";
-   
 
     //Debugging
-    echo "<br>";
+    /*e
+    cho "<br>";
     echo var_dump($data);
     echo "<br>";
     echo $mood;
@@ -74,22 +75,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     echo "<br>";
     echo $id;
     echo "<br>";
+    */
 
     $updateSQL = "UPDATE `moods` SET `context` = '$mood', `value` = '$moodchoice' WHERE `moods`.`id` = '$id'";
 
-    echo $updateSQL;
-    echo '<br>';
-    echo 'Update executed';
-    echo '<br>';
     // Execute the update statement
-
-    
     $result = $conn->query($updateSQL);
     if ($result) {
         http_response_code(200);
         echo json_encode(["message" => "Update Successful!"]);
 
-        
+
     } else {
         http_response_code(404);
         echo json_encode(["message" => "Unable to perform Update!"]);
@@ -99,29 +95,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
 
 //API call to delete a record from the users mood list
-if (($_SERVER['REQUEST_METHOD'] === 'DELETE') ) {
+if (($_SERVER['REQUEST_METHOD'] === 'DELETE')) {
 
-    echo "<p>Entered Delete/p>";
-
-    include("dbconn.php");
-
-
+   // echo "<p>Entered Delete/p>";
     include "dbconn.php";
 
     // Parse the data sent in the request
     parse_str(file_get_contents('php://input'), $data);
     $id = intval($data["mood_id"]);
-    echo "<br>";
 
-
-    echo "<br>";
-    echo $id;
-    echo "<br>";
-
-
+    //send query to delete record
     $deleteSQL = "DELETE FROM moods WHERE `moods`.`id` = $id";
-
-    echo $deleteSQL;
 
     $result = $conn->query($deleteSQL);
 
@@ -129,7 +113,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'DELETE') ) {
     if (!$result) {
         echo "<p>unable to Delete mood</p>";
     } else {
-       
+
         echo "<p>Mood Deleted</p>";
 
     }

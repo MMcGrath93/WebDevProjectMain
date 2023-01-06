@@ -4,10 +4,10 @@ $moodid = $_GET['moodid'];
 $moodchoice = $_POST['moodchoice'];
 $mood = $_POST['mood'];
 
-
+//set endpoint
 $endpoint = "http://localhost/WebDevProject/moodsapi.php";
 
-
+//build body
 $postdata = http_build_query(
     array(
         'mood' => $mood,
@@ -16,10 +16,7 @@ $postdata = http_build_query(
     )
 );
 
-echo var_dump($postdata);
-
-
-
+//build request
 $opts = array(
     'http' => array(
         'method' => 'PUT',
@@ -28,12 +25,9 @@ $opts = array(
     )
 );
 
-echo var_dump($opts);
-
+//send request 
 $context = stream_context_create($opts);
 $resource = file_get_contents($endpoint, false, $context);
-
-echo var_dump($resource);
 
 ?>
 
@@ -51,11 +45,9 @@ echo var_dump($resource);
 <body>
 
     <?php
-
-
     if ($response === FALSE) {
         echo "<p>unable to update mood</p>";
-        
+
     } else {
         echo "<p>mood updated</p>";
         header("Location: viewmoods.php");
