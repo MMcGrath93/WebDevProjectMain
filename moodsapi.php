@@ -39,10 +39,6 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
     }
 
 
-
-
-
-
 }
 //API call to update a record from the users mood list
 if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
@@ -74,15 +70,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'PATCH') {
 }
 
 //API call to update part of a record from the users mood list. This uses prepared statements in this example
-if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+if(($_SERVER['REQUEST_METHOD'] === 'PUT') && isset($_PUT['mood_id'])) {
 
-    echo '<p>In the put request</p>';
     include "dbconn.php";
-    $mood = $_PUT['mood'];
-    $id = $_PUT['id'];
 
-    $stmt = $conn->prepare("UPDATE `moods` SET `context` = ? WHERE `moods`.`id` = ?");
-    $stmt->bind_param("si", $mood, $id);
+    // Parse the data sent in the request
+    parse_str(file_get_contents('php://input'), $data);
+
+    $mood = $data['mood'];
+    $moodchoice = $data['moodchoice'];
+    $id = $data['mood_id'];
+
+    // Update the mood and moodchoice fields
+    $stmt = $conn->prepare("UPDATE `moods` SET `context` = ?, `moodchoice` = ? WHERE `moods`.`id` = ?");
+    $stmt->bind_param("ssi", $mood, $moodchoice, $id);
     $result = $stmt->execute();
     if ($result) {
         http_response_code(200);
@@ -92,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         echo json_encode(["message" => "Unable to perform Update!"]);
     }
 }
+
 
 
 //API call to delete a record from the users mood list
@@ -109,6 +111,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'DELETE') && (isset($_GET['moodid']))) {
     if (!$result) {
         echo "<p>unable to Delete mood</p>";
     } else {
+        header("Location: viewMoods.php");
         echo "<p>Mood Deleted</p>";
         
     }

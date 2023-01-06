@@ -45,9 +45,9 @@ if (!$result) {
     }
     ?>
 
-    <!-- Create Form Action - PUT -->
-    <form action="moodsapi.php?id=<?php echo $mood_id; ?>" method="put">">
-    
+    <!-- Create Form Action - POST -->
+    <form action="moodsapi.php" method="put">
+    <input type="hidden" name="mood_id" value="<?php echo $mood_id; ?>">
 
         <!--Main Canvas-->
         <div class="hero is-medium">
