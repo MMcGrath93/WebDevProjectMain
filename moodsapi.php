@@ -60,7 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     parse_str(file_get_contents('php://input'), $data);
     $mood = $conn->real_escape_string($data["mood"]);
     $moodchoice = $conn->real_escape_string($data["moodchoice"]);
-    $id = $data["moodid"];
+    $id = intval($data["mood_id"]);
+    echo "<br>";
+   
 
     //Debugging
     echo "<br>";
@@ -73,15 +75,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     echo $id;
     echo "<br>";
 
-    // Prepare the update statement
-    $stmt = $conn->prepare("UPDATE `moods` SET `context` = ?, `value` = ? WHERE `moods`.`id` = ?");
-    $stmt->bind_param("ssi", $mood, $moodchoice, $id);
+    $updateSQL = "UPDATE `moods` SET `context` = '$mood', `value` = '$moodchoice' WHERE `moods`.`id` = '$id'";
 
+    echo $updateSQL;
+    echo '<br>';
+    echo 'Update executed';
+    echo '<br>';
     // Execute the update statement
-    $result = $stmt->execute();
+
+    
+    $result = $conn->query($updateSQL);
     if ($result) {
         http_response_code(200);
-        // header("Location: viewMoods.php");
+        echo json_encode(["message" => "Update Successful!"]);
+
+        
     } else {
         http_response_code(404);
         echo json_encode(["message" => "Unable to perform Update!"]);
@@ -91,14 +99,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
 
 //API call to delete a record from the users mood list
-if (($_SERVER['REQUEST_METHOD'] === 'DELETE') && (isset($_GET['moodid']))) {
+if (($_SERVER['REQUEST_METHOD'] === 'DELETE') ) {
 
     echo "<p>Entered Delete/p>";
 
     include("dbconn.php");
-    $mood_id = $_GET['moodid'];
 
-    $deleteSQL = "DELETE FROM moods WHERE `moods`.`id` = $mood_id";
+
+    include "dbconn.php";
+
+    // Parse the data sent in the request
+    parse_str(file_get_contents('php://input'), $data);
+    $id = intval($data["mood_id"]);
+    echo "<br>";
+
+
+    echo "<br>";
+    echo $id;
+    echo "<br>";
+
+
+    $deleteSQL = "DELETE FROM moods WHERE `moods`.`id` = $id";
+
+    echo $deleteSQL;
 
     $result = $conn->query($deleteSQL);
 
@@ -106,7 +129,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'DELETE') && (isset($_GET['moodid']))) {
     if (!$result) {
         echo "<p>unable to Delete mood</p>";
     } else {
-        header("Location: viewMoods.php");
+       
         echo "<p>Mood Deleted</p>";
 
     }

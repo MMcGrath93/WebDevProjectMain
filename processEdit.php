@@ -16,6 +16,8 @@ $postdata = http_build_query(
     )
 );
 
+echo var_dump($postdata);
+
 
 
 $opts = array(
@@ -51,10 +53,12 @@ echo var_dump($resource);
     <?php
 
 
-    if ($resource === FALSE) {
+    if ($response === FALSE) {
         echo "<p>unable to update mood</p>";
+        
     } else {
-        header("Location: viewMoods.php");
+        echo "<p>mood updated</p>";
+        header("Location: viewmoods.php");
     }
 
     ?>
