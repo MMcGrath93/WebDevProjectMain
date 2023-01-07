@@ -65,7 +65,7 @@ session_start()
                             <div class="field">
                                 <label for="pass">Password</label>
                                 <div class="control">
-                                    <input class="input is-primary" name="pass" type="password" placeholder="Password"
+                                    <input class="input is-primary" name="pass" type="password" placeholder="Password" value="<?php echo $mood; ?>"
                                         id="pass">
                                 </div>
                             </div>

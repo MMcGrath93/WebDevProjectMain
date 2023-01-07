@@ -12,6 +12,11 @@ p {
     font-weight: 100;
 }
 
+
+.navbar-start {
+    background-color: grey;
+}
+
 .h1 {
     font-size: xx-large;
     font-weight: bolder;

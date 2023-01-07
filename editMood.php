@@ -10,7 +10,7 @@ $readSQL = "SELECT * from `moods` WHERE id=$mood_id";
 $result = $conn->query($readSQL);
 
 if (!$result) {
-    echo "<p>Success</p>";
+    echo "<p>error</p>";
     exit($conn->error);
 }
 
