@@ -13,10 +13,6 @@ p {
 }
 
 
-.navbar-start {
-    background-color: grey;
-}
-
 .h1 {
     font-size: xx-large;
     font-weight: bolder;
@@ -25,4 +21,3 @@ p {
 th {
     font-size: large;
 }
-
