@@ -21,10 +21,10 @@ $recordid = $_SESSION['id'];
 
 <body>
 
-<?php
-//import nav bar
-include"./navbar.html";
-?>
+    <?php
+    //import nav bar
+    include "./navbar.html";
+    ?>
 
 
     <!-- Create Form Action - POST -->
@@ -63,12 +63,24 @@ include"./navbar.html";
                                 <div class="field">
                                     <input class="button is-success is-block" type="submit" value="Submit">
                                 </div>
-
                             </div>
                         </div>
-                        <!--Content Box Box End-->
-                        <!--End of Main Canvas-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <!--Push footer for tidiness-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!--Content Box Box End-->
+    <!--End of Main Canvas-->
 
+        <!--Footer-->
+        <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
+    
 </body>
 
 </html>

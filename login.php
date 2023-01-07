@@ -84,6 +84,11 @@ session_start();
 
         <!--End of Main Canvas-->
 
+        <!--Footer-->
+        <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
+
 </body>
 
 </html>

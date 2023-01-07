@@ -75,16 +75,21 @@ $id = $_SESSION['id'];
 
         <div class="hero is-fullheight">
             <div class="hero-body is-justify-content-center is-align-items-center">
-                <!--Sign Up Box-->
+                <!--Vidualisations-->
                 <div class="columns is-flex is-flex-direction-column box">
                     <div class="column">
                         <h1>Visualisations go here</h1>
                     </div>
                 </div>
-                <!--Sign Up Box End-->
+                <!--Visualisations End-->
             </div>
         </div>
         <!--End of Main Canvas-->
+        
+    <!--Footer-->
+    <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
 
 </body>
 

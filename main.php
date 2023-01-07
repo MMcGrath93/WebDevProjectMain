@@ -19,38 +19,51 @@ session_start()
 <body>
 
 
-<?php
-//import nav bar
-include"./navbar.html";
-?>
+    <?php
+    //import nav bar
+    include "./navbar.html";
+    ?>
 
 
     <!-- Create Form Action - POST -->
     <form action="processLogin.php" method="post">
 
-        <!--Main Canvas-->
-        <div class="hero is-fullheight">
-            <div class="hero-body is-justify-content-center is-align-items-center">
-                <!--Content Box-->
-                <div class="columns is-flex is-flex-direction-column box">
-                    <div class="column">
+        <!--Container-->
+        <div class="container">
 
-                        <?php
-                        $Name = $_SESSION["user"];
+            <!--Main Canvas-->
+            <div class="hero is-fullheight">
+                <div class="hero-body is-justify-content-center is-align-items-center">
+                    <!--Content Box-->
+                    <div class="columns is-flex is-flex-direction-column box">
+                        <div class="column">
 
-                        ?>
-                        <h1 class="h1"> Hello <?php echo $Name; ?></h1>
-                        <h1 class="h1"> What would you like to do today?</h1>
-                        <br>
+                            <?php
+                            $Name = $_SESSION["user"];
+
+                            ?>
+                            <h1 class="h1"> Hello <?php echo $Name; ?></h1>
+                            <h1 class="h1"> What would you like to do today?</h1>
+                            <br>
 
 
-                        <a href='viewMoods.php' class="button is-large is-responsive"> View my Mood Log</a>
-                        <a href='recordMood.php' class="button is-large is-responsive"> Record a New Mood</a>
+                            <a href='viewMoods.php' class="button is-large is-responsive"> View my Mood Log</a>
+                            <a href='recordMood.php' class="button is-large is-responsive"> Record a New Mood</a>
 
+                        </div>
                     </div>
+                    <!--Content Box Box End-->
+                    <!--End of Main Canvas-->
                 </div>
-                <!--Content Box Box End-->
-                <!--End of Main Canvas-->
+            </div>
+        </div>
+    </form>
+
+    <!--Footer-->
+    <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
+
 
 </body>
 

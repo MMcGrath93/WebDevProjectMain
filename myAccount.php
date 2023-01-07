@@ -2,7 +2,7 @@
 
 session_start()
 
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +18,10 @@ session_start()
 
 <body>
 
-<?php
-//import nav bar
-include"./navbar.html";
-?>
+    <?php
+    //import nav bar
+    include "./navbar.html";
+    ?>
 
 
     <!-- Create Form Action - POST -->
@@ -34,12 +34,20 @@ include"./navbar.html";
                 <div class="columns is-flex is-flex-direction-column box">
                     <div class="column">
 
-                    <p>Main Content goes here for My Account Page</p>
+                        <p>Main Content goes here for My Account Page</p>
 
                     </div>
                 </div>
-                <!--Content Box Box End-->
+            </div>
+        </div>
+        <!--Content Box Box End-->
         <!--End of Main Canvas-->
+    </form>
+
+    <!--Footer-->
+    <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
 
 </body>
 

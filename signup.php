@@ -90,10 +90,18 @@ session_start()
                                 </div>
                             </div>
                         </div>
-                        <!--Sign Up Box End-->
                     </div>
                 </div>
-                <!--End of Main Canvas-->
+            </div>
+            <!--Sign Up Box End-->
+        </div>
+    </form>
+    <!--End of Main Canvas-->
+
+    <!--Footer-->
+    <div class="footer">
+        <?php include "./footer.html"; ?>
+    </div>
 
 </body>
 
