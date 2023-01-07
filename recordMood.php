@@ -48,6 +48,9 @@ $recordid = $_SESSION['id'];
                                     <option>Angry</option>
                                     <option>Anxious</option>
                                     <option>Depressed</option>
+                                    <option>Tired</option>
+                                    <option>Sick</option>
+                                    <option>Productive</option>
                                 </select>
                             </div>
                             <br>

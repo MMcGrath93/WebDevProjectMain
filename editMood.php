@@ -79,6 +79,15 @@ if (!$result) {
                                     <option value="Depressed" <?php if ($moodchoice == "Depressed")
                                         echo "selected"; ?>>
                                         Depressed</option>
+                                    <option value="Tired" <?php if ($moodchoice == "Tired")
+                                        echo "selected"; ?>>Tired
+                                    </option>
+                                    <option value="Sick" <?php if ($moodchoice == "Sick")
+                                        echo "selected"; ?>>
+                                        Sick</option>
+                                    <option value="Productive" <?php if ($moodchoice == "Productive")
+                                        echo "selected"; ?>>
+                                        Productive</option>
                                 </select>
                             </div>
                             <br>
