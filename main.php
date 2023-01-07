@@ -61,7 +61,7 @@ session_start()
     <br><br><br><br><br>
 
     <!--Footer-->
-    <div class="footer">
+    <div class="footer ">
         <?php include "./footer.html"; ?>
     </div>
 
