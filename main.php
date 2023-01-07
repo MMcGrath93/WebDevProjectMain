@@ -32,8 +32,8 @@ session_start()
         <div class="container">
 
             <!--Main Canvas-->
-            <div class="hero is-fullheight">
-                <div class="hero-body is-justify-content-center is-align-items-center">
+            <div class="hero is-large">
+                <div class="hero-body is-justify-content-center is-align-items-center pt-25= pb-25">
                     <!--Content Box-->
                     <div class="columns is-flex is-flex-direction-column box">
                         <div class="column">
@@ -58,6 +58,7 @@ session_start()
             </div>
         </div>
     </form>
+    <br><br><br><br><br>
 
     <!--Footer-->
     <div class="footer">

@@ -1,24 +1,26 @@
-p{
- font-family:Arial, Helvetica, sans-serif
+p {
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .e {
     color: crimson;
 }
 
- 
-.navbar-start{
+
+.navbar-start {
     font-size: 2rem;
     font-weight: 100;
 }
 
-.h1{
-        font-size: xx-large;
-        font-weight: bolder;
+.h1 {
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
-th{
-    font-size:large;
+th {
+    font-size: large;
 }
 
-
+.hero.is-large .hero-body {
+    padding: 3rem 3rem;
+}
