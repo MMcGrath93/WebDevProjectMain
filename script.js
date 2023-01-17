@@ -9,3 +9,11 @@ myAccountBtn.addEventListener('click', () => {
 closeModal.addEventListener('click',()=>{
     myAccountModal.classList.add('is-hidden');
 });
+
+document.getElementById("edit-info-button").addEventListener("click", function() {
+    document.getElementById("edit-info-modal").style.display = "block";
+});
+
+document.querySelector(".delete").addEventListener("click", function() {
+    document.getElementById("edit-info-modal").style.display = "none";
+});
