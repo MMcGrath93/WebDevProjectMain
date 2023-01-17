@@ -95,7 +95,7 @@ if (!$result) {
                                 <div class="columns">
                                     <div class="column">
                                         <!-- Create Form Action - PUT -->
-                                        <form action="processEdit.php" method="put">
+                                        <form action="processAccountEdit.php" method="put">
                                             <input class="button is-success is-block" type="submit" value="Submit">
                                     </div>
                                     <div class="column" align="right">
@@ -120,7 +120,7 @@ if (!$result) {
                         </header>
                         <section class="modal-card-body">
                             <p>Are you sure you want to delete your account?</p>
-                            <form action="processDelete.php" method="post">
+                            <form action="processAccountDelete.php" method="post">
                                 <input type="hidden" name="accountid" value="<?php echo $accountid; ?>">
                                 <div class="columns">
                                     <div class="column">
