@@ -26,3 +26,6 @@ th {
     display: none;
 }
 
+element.style {
+    display: flex;
+}

@@ -1,8 +1,9 @@
 <?php
 
-$moodid = $_GET['moodid'];
-$moodchoice = $_POST['moodchoice'];
-$mood = $_POST['mood'];
+session_start();
+$id = $_SESSION['id'];
+$username = $_GET['user'];
+$name = $_GET['name'];
 
 //set endpoint
 $endpoint = "http://localhost/WebDevProject/accountapi.php";
@@ -10,11 +11,12 @@ $endpoint = "http://localhost/WebDevProject/accountapi.php";
 //build body
 $postdata = http_build_query(
     array(
-        'mood' => $mood,
-        'moodchoice' => $moodchoice,
-        'mood_id' => $moodid,
+        'user' => $username,
+        'name' => $name,
+        'userid' => $id
     )
 );
+
 
 //build request
 $opts = array(
@@ -46,11 +48,11 @@ $resource = file_get_contents($endpoint, false, $context);
 
     <?php
     if ($response === FALSE) {
-        echo "<p>unable to update mood</p>";
+        echo "<p>unable to update account/p>";
 
     } else {
-        echo "<p>mood updated</p>";
-        header("Location: viewmoods.php");
+        echo "<p>account updated</p>";
+        header("Location: myAccount.php");
     }
 
     ?>

@@ -1,15 +1,17 @@
 <?php
 
-$moodid = $_GET['moodid'];
+session_start();
+$id = $_SESSION['id'];
+
+echo $id;
 
 
-
-$endpoint = "http://localhost/WebDevProject/accountapi.php";
+$endpoint = "http://localhost/WebDevProject/accountapi.php?user=$id";
 
 
 $postdata = http_build_query(
     array(
-        'mood_id' => $moodid,
+        'id' => $id
     )
 );
 
@@ -51,11 +53,11 @@ echo var_dump($resource);
 
 
     if ($response === FALSE) {
-        echo "<p>unable to Delete mood</p>";
+        echo "<p>unable to Delete user</p>";
         
     } else {
-        echo "<p>mood Deleted</p>";
-        header("Location: viewmoods.php");
+        echo "<p>User Deleted</p>";
+       header("Location: login.php");
     }
 
     ?>

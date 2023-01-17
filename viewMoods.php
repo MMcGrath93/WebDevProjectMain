@@ -70,7 +70,7 @@ $id = $_SESSION['id'];
 
 
                 ?>
-<a href='export.php' class='button is-primary'>Export to Excel</a>
+<a href='export.php' class='button is-primary'>Export My Mood Log</a>
             </div>
         </div>
 
@@ -91,11 +91,6 @@ $id = $_SESSION['id'];
             <?php include "./footer.html"; ?>
         </div>
 
-        <script>
-            document.getElementById("export-button").addEventListener("click", function () {
-                // code to export data to excel
-            });
-        </script>
 
 </body>
 

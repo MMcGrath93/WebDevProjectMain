@@ -94,8 +94,8 @@ if (!$result) {
 
                                 <div class="columns">
                                     <div class="column">
-                                        <!-- Create Form Action - PUT -->
-                                        <form action="processAccountEdit.php" method="put">
+                                        <!-- Create Form Action - POST -->
+                                        <form action="processAccountEdit.php" method="post">
                                             <input class="button is-success is-block" type="submit" value="Submit">
                                     </div>
                                     <div class="column" align="right">
@@ -111,7 +111,7 @@ if (!$result) {
                 </div>
 
                 <!--Delete Modal-->
-                <div id="delete-account-modal" class="modal">
+                <div id="delete-account-modal" class="modal" style="display: none;">
                     <div class="modal-background"></div>
                     <div class="modal-card">
                         <header class="modal-card-head">
@@ -148,6 +148,8 @@ if (!$result) {
         <?php include "./footer.html"; ?>
     </div>
 
+
+
     <!--Edit Modal Script-->
     <script>
         // Get the modal
@@ -176,7 +178,8 @@ if (!$result) {
 
 
     </script>
-    <!--Delete Modal Script-->
+
+<!--Delete Modal Script-->
     <script>
         // Get the delete modal
         var deleteModal = document.getElementById("delete-account-modal");
@@ -184,15 +187,15 @@ if (!$result) {
         // Get the delete button
         var deleteBtn = document.getElementById("delete-account-button");
 
-        // Get the <span> element that closes the modal
+        // Get the x element that closes the modal
         var closeDeleteBtn = document.getElementsByClassName("delete")[1];
 
         // When the user clicks the button, open the modal 
         deleteBtn.onclick = function () {
-            deleteModal.style.display = "block";
+            deleteModal.style.display = "flex";
         }
 
-        // When the user clicks on <span> (x), close the modal
+        // When the user clicks on x, close the modal
         closeDeleteBtn.onclick = function () {
             deleteModal.style.display = "none";
         }
@@ -204,8 +207,6 @@ if (!$result) {
             }
         }
     </script>
-
-
 </body>
 
 
