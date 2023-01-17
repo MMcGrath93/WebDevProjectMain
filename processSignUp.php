@@ -48,10 +48,6 @@ $name = $_POST['name']
         if (mysqli_num_rows($res) > 0) {
             header("Location: signup.php?error=usernametaken");
             exit();
-        } else {
-            // Create User Record
-            $insertSQL = "INSERT INTO `users` (`username`, `password`, `Name`) VALUES ('$username','$hashedpass','$name');";
-            $result = $conn->query($insertSQL);
         }
 
     }

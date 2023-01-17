@@ -15,8 +15,6 @@ $endpoint = "http://localhost/WebDevProject/accountapi.php?user=$username";
 
 $result = file_get_contents($endpoint);
 
-
-//This is the issue, nothing is decoding 
 $data = json_decode($result, true);
 
 

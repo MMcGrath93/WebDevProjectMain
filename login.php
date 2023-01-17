@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 ?>
 
 
@@ -81,6 +83,9 @@ session_start();
             </div>
         </div>
 
+        
+
+        
 
         <!--End of Main Canvas-->
 
@@ -88,6 +93,8 @@ session_start();
         <div class="footer">
         <?php include "./footer.html"; ?>
     </div>
+
+    
 
 </body>
 

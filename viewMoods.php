@@ -68,8 +68,9 @@ $id = $_SESSION['id'];
 
                 echo '</table>';
 
-                ?>
 
+                ?>
+<a href='export.php' class='button is-primary'>Export to Excel</a>
             </div>
         </div>
 
@@ -85,10 +86,16 @@ $id = $_SESSION['id'];
             </div>
         </div>
         <!--End of Main Canvas-->
-    <!--Footer-->
-    <div class="footer">
-        <?php include "./footer.html"; ?>
-    </div>
+        <!--Footer-->
+        <div class="footer">
+            <?php include "./footer.html"; ?>
+        </div>
+
+        <script>
+            document.getElementById("export-button").addEventListener("click", function () {
+                // code to export data to excel
+            });
+        </script>
 
 </body>
 
