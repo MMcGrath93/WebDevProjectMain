@@ -57,6 +57,7 @@ if (!$result) {
 
                 <h3 class="title has-text-black">My Account</h3>
                 <p class="subtitle has-text-black">Edit or Delete your Account below</p>
+                <p class="subtitle has-text-black">You me need to log out for changes to take effect</p>
                 <?php
 
                 ?>
@@ -179,7 +180,7 @@ if (!$result) {
 
     </script>
 
-<!--Delete Modal Script-->
+    <!--Delete Modal Script-->
     <script>
         // Get the delete modal
         var deleteModal = document.getElementById("delete-account-modal");

@@ -1,3 +1,5 @@
+
+
 <?php
 
 session_start()
@@ -21,7 +23,7 @@ session_start()
 <body>
 
     <!-- Create Form Action - POST -->
-    <form action="processSignUp.php" method="post">
+    <form action="accountapi.php" method="post">
 
         <!--Main Canvas-->
         <div class="hero is-fullheight">

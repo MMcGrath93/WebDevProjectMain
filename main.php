@@ -1,6 +1,7 @@
 <?php
 
-session_start()
+session_start();
+$currentuser = $_SESSION["user"];
 
     ?>
 
@@ -40,6 +41,7 @@ session_start()
 
                             <?php
                             $Name = $_SESSION["user"];
+                            $currentuser = $_SESSION["user"];
 
                             ?>
                             <h1 class="h1"> Hello <?php echo $Name; ?></h1>

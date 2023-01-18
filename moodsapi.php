@@ -31,6 +31,8 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
     $recordid = $_SESSION['id'];
 
 
+    
+
     $insertSQL = "INSERT INTO `moods` (`id`, `user_id`, `value`, `context`, `datetime`) VALUES (NULL,'$recordid','$moodchoice','$mood',current_timestamp())";
 
     $result = $conn->query($insertSQL);
