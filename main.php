@@ -20,12 +20,22 @@ $currentuser = $_SESSION["user"];
 <body>
 
 
+
+
     <?php
     //import nav bar
     include "./navbar.html";
     ?>
 
+<?php
+if(!isset($_SESSION['id'])){
+    header('Location: login.php');
 
+}
+
+
+
+?>
     <!-- Create Form Action - POST -->
     <form action="processLogin.php" method="post">
 
@@ -41,7 +51,6 @@ $currentuser = $_SESSION["user"];
 
                             <?php
                             $Name = $_SESSION["user"];
-                            $currentuser = $_SESSION["user"];
 
                             ?>
                             <h1 class="h1"> Hello <?php echo $Name; ?></h1>

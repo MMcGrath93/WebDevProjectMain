@@ -2,6 +2,13 @@
 
 session_start();
 
+
+
+if(!isset($_SESSION['id'])){
+    header('Location: login.php');
+
+}
+
 include("dbconn.php");
 $mood_id = $_GET['mood_id'];
 $readSQL = "SELECT * from `moods` WHERE id=$mood_id";
