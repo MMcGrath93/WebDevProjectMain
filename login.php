@@ -78,7 +78,7 @@ session_start();
                 <!--Image if required-->
                 <div class="column is-5">
                     <img
-                        src="images/mood-tracker-calendar-year-pixels-planner-feelings-vector-illustrations-161716939.jpg">
+                        src="images/logo.png">
                 </div>
             </div>
         </div>

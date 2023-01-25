@@ -37,43 +37,43 @@ $id = $_SESSION['id'];
 
     <!--Main Canvas-->
     <div class="hero is-large">
-        < <div class="container has-text-centered">
+        <div class="container has-text-centered">
             <!--Visualisations-->
             <div class="columns is-flex is-flex-direction-column box">
-                <div class="column has-text-centered">
-                    <h1>Uselful Links</h1>
+                <div class="column has-text-centered is-size-4">
+                    <h2 class="title is-2 pr-3">Useful Links</h2>
                     <?php
 
-$readSQL = "SELECT * FROM `resources`";
-$result = $conn->query($readSQL);
-//Table Headers
-echo '<table class="table is-bordered is-striped is-narrow is-hoverable">';
-echo '<tr>
+                    $readSQL = "SELECT * FROM `resources`";
+                    $result = $conn->query($readSQL);
+                    //Table Headers
+                    echo '<table class="table is-bordered is-striped is-narrow ">';
+                    echo '<tr>
     <th class="has-background-white">Name</th>
     <th class="has-background-white">Description</th>
     <th class="has-background-white">Link</th>
     </tr>';
 
-while ($row = $result->fetch_assoc()) {
+                    while ($row = $result->fetch_assoc()) {
 
-    $rName = $row["ResourceName"];
-    $rDesc = $row["ResourceDesc"];
-    $rLink = $row["Link"];
+                        $rName = $row["ResourceName"];
+                        $rDesc = $row["ResourceDesc"];
+                        $rLink = $row["Link"];
 
-    //Add each row
-
-    echo "<tr>
+                        //Add each row
+                    
+                        echo "<tr>
 <td>$rName</td>
 <td>$rDesc</td>
 <td><a href='$rLink' >$rLink</a></td>";
 
-}
+                    }
 
 
-echo '</table>';
+                    echo '</table>';
 
 
-?>
+                    ?>
 
 
                 </div>
@@ -85,7 +85,7 @@ echo '</table>';
 
     <!--End of Main Canvas-->
     <br>
-<br>
+    <br>
 
     <!--Footer-->
     <div class="footer">
