@@ -38,7 +38,7 @@ $id = $_SESSION['id'];
 
         <!--Main Canvas-->
         <div class="hero is-large">
-            <div class="container has-text-centered">
+            <div class="container has-text-centered is-size-5">
                 <!--Content Box-->
 
 
@@ -51,10 +51,10 @@ $id = $_SESSION['id'];
                 //Table Headers
                 echo '<table class="table is-bordered is-striped is-narrow is-hoverable">';
                 echo '<tr>
-                    <th class="has-background-white">Mood</th>
-                    <th class="has-background-white">Notes</th>
-                    <th class="has-background-white">Date & Time Recorded</th>
-                    <th class="has-background-white"></th>
+                    <th class="has-background-white is-size-4">Mood</th>
+                    <th class="has-background-white is-size-4">Notes</th>
+                    <th class="has-background-white is-size-4">Date & Time Recorded</th>
+                    <th class="has-background-white is-size-4"></th>
                     </tr>';
 
                 while ($row = $result->fetch_assoc()) {

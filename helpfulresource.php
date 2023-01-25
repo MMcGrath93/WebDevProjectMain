@@ -38,7 +38,6 @@ $id = $_SESSION['id'];
     <!--Main Canvas-->
     <div class="hero is-large">
         <div class="container has-text-centered">
-            <!--Visualisations-->
             <div class="columns is-flex is-flex-direction-column box">
                 <div class="column has-text-centered is-size-4">
                     <h2 class="title is-2 pr-3">Useful Links</h2>
@@ -77,9 +76,7 @@ $id = $_SESSION['id'];
 
 
                 </div>
-            </div>
-            <!--Visualisations End-->
-        </div>
+            </div>  </div>
     </div>
 
 

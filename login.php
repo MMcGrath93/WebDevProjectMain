@@ -30,7 +30,7 @@ session_start();
                 <!--Log In Box-->
                 <div class="columns is-flex is-flex-direction-column box">
                     <div class="column">
-                        <h3 class="title has-text-black">Mood Tracker</h3>
+                        <h3 class="title has-text-black">My Mood Journal</h3>
                         <p class="subtitle has-text-black">Log in to record how you feel</p>
 
 <?php
