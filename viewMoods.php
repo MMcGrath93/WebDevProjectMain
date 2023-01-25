@@ -5,7 +5,7 @@ session_start();
 
 
 
-if(!isset($_SESSION['id'])){
+if (!isset($_SESSION['id'])) {
     header('Location: login.php');
 
 }
@@ -42,6 +42,8 @@ $id = $_SESSION['id'];
                 <!--Content Box-->
 
 
+
+
                 <?php
 
                 $readSQL = "SELECT * FROM `moods` WHERE `user_id`='$id'";
@@ -70,6 +72,7 @@ $id = $_SESSION['id'];
 <td>$date</td>";
                     echo "<td> <a href='editMood.php?mood_id=$moodid' class='button'>Edit</a> <a href='processDelete.php?moodid=$moodid'class='button is-danger'>Delete</a></td>
 </tr>";
+
                 }
 
 
@@ -77,7 +80,7 @@ $id = $_SESSION['id'];
 
 
                 ?>
-<a href='export.php' class='button is-primary'>Export My Mood Log</a>
+                <a href='export.php' class='button is-primary'>Export My Mood Log</a>
             </div>
         </div>
 

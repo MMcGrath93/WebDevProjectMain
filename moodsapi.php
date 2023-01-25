@@ -38,8 +38,10 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
     $result = $conn->query($insertSQL);
 
     if (!$result) {
+        http_response_code(404);
         exit($conn->error);
     } else {
+        http_response_code(200);
         header("Location: viewMoods.php");
     }
 
