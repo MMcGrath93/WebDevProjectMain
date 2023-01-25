@@ -77,7 +77,7 @@ $id = $_SESSION['id'];
                     }
                     ?>
                     <h3 class="title is-3">My Mood Chart</h3>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="moodChart"></canvas>
                 </div>
             </div>
         </div>
@@ -89,8 +89,8 @@ $id = $_SESSION['id'];
 
     <!--Script to create mood Visualisation---->
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
+        var ctx = document.getElementById('moodChart').getContext('2d');
+        var moodChart = new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: <?php echo json_encode($moodLabels); ?>,
