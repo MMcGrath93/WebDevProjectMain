@@ -2,8 +2,6 @@
 
 session_start();
 
-
-
 ?>
 
 
@@ -33,17 +31,16 @@ session_start();
                         <h3 class="title has-text-black">My Mood Journal</h3>
                         <p class="subtitle has-text-black">Log in to record how you feel</p>
 
-<?php
+                        <?php
                         //display errors
                         if (isset($_GET['error'])) {
-                            
-                                echo '<p class="e">Username or Password is incorrect</p>';
-                
 
-                        }
-                        else{
-    echo '<br>';
-                
+                            echo '<p class="e">Username or Password is incorrect</p>';
+
+
+                        } else {
+                            echo '<br>';
+
                         }
 
                         ?>
@@ -77,24 +74,23 @@ session_start();
 
                 <!--Image if required-->
                 <div class="column is-5">
-                    <img
-                        src="images/logo.png">
+                    <img src="images/logo.png">
                 </div>
             </div>
         </div>
 
-        
 
-        
+
+
 
         <!--End of Main Canvas-->
 
         <!--Footer-->
         <div class="footer">
-        <?php include "./footer.html"; ?>
-    </div>
+            <?php include "./footer.html"; ?>
+        </div>
 
-    
+
 
 </body>
 

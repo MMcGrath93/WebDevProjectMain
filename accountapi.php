@@ -162,7 +162,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
-    echo "<p>Entered Delete</p>";
     include "dbconn.php";
 
     // Parse the data sent in the request
@@ -175,9 +174,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 
 
     if (!$result) {
+        http_response_code(404);
         echo "<p>unable to Delete user/p>";
     } else {
-
+        http_response_code(200);
         echo "<p>User Deleted</p>";
     }
 
