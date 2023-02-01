@@ -4,11 +4,11 @@ include("dbconn.php");
 session_start();
 
 //Get Inputs
-$username = $_POST['user'];
-$password = $_POST['pass'];
-$confirmpassword = $_POST['confirmpass'];
+$username = $conn->real_escape_string($_POST['user']);
+$password = $conn->real_escape_string($_POST['pass']);
+$confirmpassword = $conn->real_escape_string($_POST['confirmpass']);
 $hashedpass = password_hash($password, PASSWORD_DEFAULT);
-$name = $_POST['name']
+$name = $conn->real_escape_string($_POST['name']);
 
     ?>
 

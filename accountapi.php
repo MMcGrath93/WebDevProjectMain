@@ -7,7 +7,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'GET') && (isset($_GET['user']))) {
 
     //DB Connection
     include "dbconn.php";
-    $user = $_GET['user'];
+    $user = $conn->real_escape_string($_GET['user']);
 
     //Get Data from Database
     $readSQL = "SELECT * FROM `users` WHERE `username` = '$user'";
@@ -43,7 +43,7 @@ if (($_SERVER['REQUEST_METHOD'] === 'GET') && (!isset($_GET['user']))) {
 
     //DB Connection
     include "dbconn.php";
-    $user = $_GET['user'];
+    $user = $conn->real_escape_string($_GET['user']);
 
     //Get Data from Database
     $readSQL = "SELECT * FROM `users`";

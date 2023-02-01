@@ -6,8 +6,8 @@ session_start();
 
 <?php
 //Get Inputs
-$username = $_POST['user'];
-$password = $_POST['pass'];
+$username = htmlentities($_POST['user']);
+$password = htmlentities($_POST['pass']);
 
 
 //API Details
