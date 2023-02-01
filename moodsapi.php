@@ -28,20 +28,23 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
     $mood = $conn->real_escape_string($_POST['mood']);
     $moodchoice = $conn->real_escape_string($_POST['moodchoice']);
-    $recordid = $_SESSION['id'];
+    $recordid = $conn->real_escape_string($_POST['id']);
 
 
-    
+
 
     $insertSQL = "INSERT INTO `moods` (`id`, `user_id`, `value`, `context`, `datetime`) VALUES (NULL,'$recordid','$moodchoice','$mood',current_timestamp())";
+
 
     $result = $conn->query($insertSQL);
 
     if (!$result) {
         http_response_code(404);
+        echo json_encode(["message" => "Unable to perform entry!"]);
         exit($conn->error);
     } else {
         http_response_code(200);
+        echo json_encode(["message" => "Record Created!"]);
         header("Location: viewMoods.php");
     }
 
@@ -101,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 //API call to delete a record from the users mood list
 if (($_SERVER['REQUEST_METHOD'] === 'DELETE')) {
 
-   // echo "<p>Entered Delete/p>";
+    // echo "<p>Entered Delete/p>";
     include "dbconn.php";
 
     // Parse the data sent in the request

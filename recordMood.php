@@ -67,6 +67,7 @@ if(!isset($_SESSION['id'])){
                                     <label for="mood">Any observations you want to note?</label>
                                     <textarea class="textarea" name="mood" id="mood" placeholder=""> </textarea>
                                 </div>
+                                <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ; ?>">
                                 <br>
 
                                 <div class="field">
