@@ -3,13 +3,6 @@
 include("dbconn.php");
 session_start();
 
-//Get Inputs
-$username = $conn->real_escape_string($_POST['user']);
-$password = $conn->real_escape_string($_POST['pass']);
-$confirmpassword = $conn->real_escape_string($_POST['confirmpass']);
-$hashedpass = password_hash($password, PASSWORD_DEFAULT);
-$name = $conn->real_escape_string($_POST['name']);
-
     ?>
 
 <!DOCTYPE html>

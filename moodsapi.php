@@ -68,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     // Parse the data sent in the request
     parse_str(file_get_contents('php://input'), $data);
     $mood = $conn->real_escape_string($data["mood"]);
-    $moodchoice = $conn->real_escape_string($data["moodchoice"]);
     $id = intval($data["mood_id"]);
 
     //Debugging
@@ -84,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     echo "<br>";
     */
 
-    $updateSQL = "UPDATE `moods` SET `context` = '$mood', `value` = '$moodchoice' WHERE `moods`.`id` = '$id'";
+    $updateSQL = "UPDATE `moods` SET `context` = '$mood' WHERE `moods`.`id` = '$id'";
 
     // Execute the update statement
     $result = $conn->query($updateSQL);

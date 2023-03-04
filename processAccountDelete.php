@@ -6,7 +6,7 @@ $id = $_SESSION['id'];
 echo $id;
 
 
-$endpoint = "http://localhost/WebDevProject/accountapi.php?user=$id";
+$endpoint = "http://localhost/WebDevProject/accountapi.php";
 
 
 $postdata = http_build_query(

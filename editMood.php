@@ -68,7 +68,7 @@ if (!$result) {
                         <div class="field">
                             <div>
                                 <label for="moodchoice">How are you feeling today?</label>
-                                <select class="select" name="moodchoice" id="moodchoice">
+                                <select class="select" name="moodchoice" id="moodchoice" disabled>
                                     <option value="Happy" <?php if ($moodchoice == "Happy")
                                         echo "selected"; ?>>Happy
                                     </option>

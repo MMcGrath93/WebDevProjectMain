@@ -12,6 +12,7 @@ $readSQL = "SELECT * from `users` WHERE id=$accountid";
 
 
 
+
 $result = $conn->query($readSQL);
 
 if (!$result) {

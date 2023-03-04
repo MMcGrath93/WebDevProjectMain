@@ -1,7 +1,6 @@
 <?php
 
 $moodid = htmlentities($_GET['moodid']);
-$moodchoice = htmlentities($_POST['moodchoice']);
 $mood = htmlentities($_POST['mood']);
 
 //set endpoint
@@ -11,7 +10,6 @@ $endpoint = "http://localhost/WebDevProject/moodsapi.php";
 $postdata = http_build_query(
     array(
         'mood' => $mood,
-        'moodchoice' => $moodchoice,
         'mood_id' => $moodid,
     )
 );

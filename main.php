@@ -19,9 +19,6 @@ $currentuser = $_SESSION["user"];
 
 <body>
 
-
-
-
     <?php
     //import nav bar
     include "./navbar.html";
@@ -32,8 +29,6 @@ if(!isset($_SESSION['id'])){
     header('Location: login.php');
 
 }
-
-
 
 ?>
     <!-- Create Form Action - POST -->
