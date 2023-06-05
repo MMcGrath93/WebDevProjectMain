@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "c0315db0-f555-4ce3-b2d7-24c3affa9be5",
+		"name": "Moods",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24945039"
+	},
+	"item": [
+		{
+			"name": "Create Mood",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mood",
+							"value": "Demo new entry",
+							"type": "text"
+						},
+						{
+							"key": "moodchoice",
+							"value": "Productive",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "73",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/moodsapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"moodsapi.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update mood",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mood_id",
+							"value": "74",
+							"type": "text"
+						},
+						{
+							"key": "mood",
+							"value": "Demo Test Update",
+							"type": "text"
+						},
+						{
+							"key": "moodchoice",
+							"value": "Happy",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/moodsapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"moodsapi.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mood",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "mood_id",
+							"value": "74",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/moodsapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"moodsapi.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
