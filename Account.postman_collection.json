@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "66680711-40d1-4178-a64b-9933736f05ec",
+		"name": "Account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24945039"
+	},
+	"item": [
+		{
+			"name": "Get All Account Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/WebDevProject/accountapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"accountapi.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual Account Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/WebDevProject/accountapi.php?user=mattthebhoy@hotmail.co.uk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"accountapi.php"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "mattthebhoy@hotmail.co.uk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "demo@user2.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Demo User 2",
+							"type": "text"
+						},
+						{
+							"key": "pass",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "confirmpass",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/accountapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"accountapi.php"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "testuser@user.com",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Tester",
+							"disabled": true
+						},
+						{
+							"key": "pass",
+							"value": "password",
+							"disabled": true
+						},
+						{
+							"key": "confrimpass",
+							"value": "password",
+							"disabled": true
+						},
+						{
+							"key": "hashedpass",
+							"value": "password",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "demo@user.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Demo User Updated",
+							"type": "text"
+						},
+						{
+							"key": "userid",
+							"value": "72",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/accountapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"accountapi.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "72",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/WebDevProject/accountapi.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"WebDevProject",
+						"accountapi.php"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "64",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
